@@ -17,5 +17,8 @@ After each upgrade, macOS sees a new app. Remove TypeMouse from the Accessibilit
 
 ## Updates
 
-The `Update TypeMouse` workflow checks for a new TypeMouse release every 6 hours.
-When it finds one, it updates the version and checksum in `Casks/typemouse.rb`.
+Each TypeMouse release updates the version and checksum in `Casks/typemouse.rb`.
+The TypeMouse release workflow pushes the change with a deploy key that can write only to this repo.
+
+If that step fails, run the `Update TypeMouse` workflow by hand:
+`gh workflow run update-typemouse.yml --repo fsargent/homebrew-tap`

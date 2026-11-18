@@ -1,10 +1,9 @@
-# Keeps Casks/typemouse.rb on the latest TypeMouse release.
-# It runs every 6 hours, or on demand: gh workflow run update-typemouse.yml --repo fsargent/homebrew-tap
+# Manual fallback: sets Casks/typemouse.rb to the latest TypeMouse release.
+# The TypeMouse release workflow normally updates the cask itself.
+# Run it with: gh workflow run update-typemouse.yml --repo fsargent/homebrew-tap
 name: Update TypeMouse
 
 on:
-  schedule:
-    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
